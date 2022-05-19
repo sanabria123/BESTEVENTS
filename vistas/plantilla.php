@@ -82,7 +82,7 @@
 
       }else{
 
-        include "modulo/404.php";
+        include "modulos/404.php";
 
         
       }
@@ -102,6 +102,6 @@
 </div>
 <!-- ./wrapper -->
 
-<script src="vistas/js/plantilla.js"></script>
+<!-- <script src="vistas/js/plantilla.js"></script> -->
 </body>
 </html>
