@@ -4,7 +4,7 @@
 
       <h1>
 
-        Administrar categorías
+        Administrar categorias
         
       </h1>
 
@@ -12,7 +12,7 @@
 
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
 
-        <li class="active">Administrar categorías</li>
+        <li class="active">Administrar categorias</li>
 
       </ol>
 

@@ -28,10 +28,10 @@
 
             <li>
 
-                <a href="categorías">
+                <a href="categorias">
 
                     <i class="fa fa-th"></i>
-                    <span>Categorías</span>
+                    <span>Categorias</span>
 
                 </a>
 

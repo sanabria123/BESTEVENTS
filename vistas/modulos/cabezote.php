@@ -39,7 +39,7 @@
 
                 <li class="dropdown user user-menu">
 
-                    <a href="#" class="dropdown-toggle" data-toogle="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     
                         <img src="vistas/img/usuarios/default/anonymous.jpg" class="user-image">
                     
@@ -50,11 +50,17 @@
                     <!-- Dropdown-toggle -->
 
                     <ul class="dropdown-menu">
+
                         <li class="user-body">
+
                              <div class="pull-right">
+
                                  <a href="salir" class="btn btn-default btn-flat">Salir</a>
+
                              </div>
+
                          </li>
+                         
                     </ul>
 
                 </li>

@@ -1,3 +1,9 @@
+<?php
+
+session_start()
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +12,8 @@
   <title>BESTEVENTS</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <link rel="icon" href="vistas/img/plantilla/icono.color.png">
 
   <!-- PLUGINS DE CSS -->
 
@@ -27,6 +35,10 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
+   <!-- DataTables -->
+   <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+   <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/responsive.bootstrap.min.css">
+
   <!-- PLUGINS DE JAVASCRIPT -->  
 
   <!-- jQuery 3 -->
@@ -41,15 +53,26 @@
   <!-- AdminLTE App -->
   <script src="vistas/dist/js/adminlte.min.js"></script>
 
+  <!-- DataTables -->
+  <script src="vistas/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="vistas/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+  <script src="vistas/bower_components/datatables.net-bs/js/dataTables.responsive.min.js"></script>
+  <script src="vistas/bower_components/datatables.net-bs/js/responsive.bootstrap.min.js"></script>
+
+  <!-- SweetAlert 2 -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <!-- CUERPO DOCUMENTO -->
 
-<body class="hold-transition skin-blue sidebar-collapse sidebar-mini">
-<!-- Site wrapper -->
-<div class="wrapper">
+<body class="hold-transition skin-blue sidebar-collapse sidebar-mini login-page">
 
   <?php
+
+  if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok"){
+
+    echo '<div class="wrapper">';
 
      /***********************
      * CABEZOTE 
@@ -76,7 +99,8 @@
          $_GET["ruta"] == "clientes" ||
          $_GET["ruta"] == "ventas" ||
          $_GET["ruta"] == "crear-venta" ||
-         $_GET["ruta"] == "reportes"){
+         $_GET["ruta"] == "reportes" ||
+         $_GET["ruta"] == "salir"){
 
         include "modulos/".$_GET["ruta"].".php";
 
@@ -86,6 +110,10 @@
 
         
       }
+
+    }else{
+
+      include "modulos/inicio.php";
 
     }
 
@@ -97,11 +125,17 @@
 
     include "modulos/footer.php";
 
+    echo '</div>';
+
+  }else{
+
+    include "modulos/login.php";
+
+  }
+
   ?>
 
-</div>
-<!-- ./wrapper -->
-
 <script src="vistas/js/plantilla.js"></script>
+<script src="vistas/js/usuarios.js"></script>
 </body>
 </html>
