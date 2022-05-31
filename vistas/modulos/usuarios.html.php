@@ -209,24 +209,24 @@
                     <option value="">seleccionar Perfil</option>
                     <option value="Administrador">Administrador</option>
                     <option value="Cliente">Cliente</option>
-                    <option value="Vendedor">Contador</option>
-          
+                    <option value="Vendedor">Vendedor</option>
+                    <option value="Asesor Virtual">Asesor virtual</option>
                   </select>
 
                 </div>
               </div>
 
-              <!-- ENTRADA PARA SUBIR FOTO-->
+              <!-- ENTRADA PARA SELECCIONAR SU PERFIL-->
 
               <div class="form-group">
 
                 <div class="panel">SUBIR FOTO</div>
 
-                <input type="file" class="nuevaFoto" name="nuevaFoto">
+                <input type="file" id="nuevaFoto" name="nuevaFoto">
 
-                <p class="help-block">Peso máximo de la foto 2 MB</p>
+                <p class="help-block">Peso máximo de la foto 200 MB</p>
 
-                <img src="vistas/img/usuarios/default/anonymous.jpg" class="img-thumbnail previsualizar" width="100px">
+                <img src="vistas/img/usuarios/default/anonymous.jpg" class="img-thumbnail" width="100px">
 
               </div>
 
@@ -243,13 +243,6 @@
           <button typed="submit" class="btn btn-primary">Guardar usuario</button>
 
         </div>
-
-        <?php
-
-          $crearUsuario = new ControladorUsuarios();
-          $crearUsuario -> ctrCrearUsuario();
-
-        ?>
 
       </form>
 
