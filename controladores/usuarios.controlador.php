@@ -13,6 +13,8 @@ class ControladorUsuarios{
             if(preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingUsuario"]) &&
               preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingPassword"])){
 
+                $encriptar = crypt($_POST["ingPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+
                 $tabla = "usuarios";
 
                 $item = "usuario";
@@ -20,9 +22,14 @@ class ControladorUsuarios{
 
                 $respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
 
-                if($respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["password"] == $_POST["ingPassword"]){
+                if($respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["password"] == $encriptar){
 
                     $_SESSION["iniciarSesion"] = "ok";
+                    $_SESSION["id"] = $respuesta["id"];
+                    $_SESSION["nombre"] = $respuesta["nombre"];
+                    $_SESSION["usuario"] = $respuesta["usuario"];
+                    $_SESSION["foto"] = $respuesta["foto"];
+                    $_SESSION["perfil"] = $respuesta["perfil"];
 
                     echo '<script>
 
@@ -50,15 +57,16 @@ class ControladorUsuarios{
 
     static public function ctrCrearUsuario(){
         if(isset($_POST["nuevoUsuario"])){
+
             if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍOÚ ]+$/', $_POST["nuevoNombre"]) && 
-            preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoUsuario"]) &&
-            preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoPassword"])){
+                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoUsuario"]) &&
+                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoPassword"])){
 
                     /***************************
                     * VALIDAR IMAGEN
                     ***************************/
 
-                     $ruta= "";
+                    $ruta = "";
 
                     if(isset($_FILES["nuevaFoto"]["tmp_name"])){
 
@@ -73,8 +81,6 @@ class ControladorUsuarios{
 
                         $directorio = "vistas/img/usuarios/" .$_POST["nuevoUsuario"];
 
-                        /* ya vuelvo */
-
 
                         mkdir($directorio, 0755);
                         
@@ -82,7 +88,7 @@ class ControladorUsuarios{
                         * DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP
                         *********************************************************/
 
-                        if($_FILES["nuevoFoto"]["type"] == "image/jpg"){
+                        if($_FILES["nuevaFoto"]["type"] == "image/jpeg"){
 
                             /*********************************************************
                             * GUARDAMOS LA IMAGEN EN EL DIRECTORIO
@@ -92,17 +98,17 @@ class ControladorUsuarios{
 
                             $ruta = "vistas/img/usuarios/" .$_POST["nuevoUsuario"]."/".$aleatorio.".jpg";
 
-                            $origen = imagecreatefromjpg($_FILES["nuevaFoto"]["tmp_name"]);
+                            $origen = imagecreatefromjpeg($_FILES["nuevaFoto"]["tmp_name"]);
 
                             $destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
                             imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
 
-                            imagejpg($destino, $ruta);
+                            imagejpeg($destino, $ruta);
                         
                         }
 
-                        if($_FILES["nuevoFoto"]["icon"] == "image/png"){
+                        if($_FILES["nuevaFoto"]["type"] == "image/png"){
 
                             /*********************************************************
                             * GUARDAMOS LA IMAGEN EN EL DIRECTORIO
@@ -126,20 +132,50 @@ class ControladorUsuarios{
                     }
 
 
-                $tabla = "usuarios";
-                $datos = array("nombre" => $_POST["nuevoNombre"],
-                               "usuario" => $_POST["nuevoUsuario"],
-                               "password" => $_POST["nuevoPassword"],
-                               "perfil" => $_POST["nuevoPerfil"]);
+                    $tabla = "usuarios";
 
-                $respuesta = ModeloUsuarios::mdlIngresarUsuario($tabla, $datos);
+                    $encriptar = crypt($_POST["nuevoPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
 
-                if ($respuesta == "ok"){
+                    $datos = array("nombre" => $_POST["nuevoNombre"],
+                                    "usuario" => $_POST["nuevoUsuario"], 
+                                    "password" => $encriptar,
+                                    "perfil" => $_POST["nuevoPerfil"],
+                                    "foto" => $ruta);
+
+                    $res = ModeloUsuarios::mdlIngresarUsuario($tabla, $datos);
+
+                    if($res == "ok"){
+                        echo '<script>
+                    
+                        swal.fire({
+                            icon: "success",
+                            title: "¡Usuario creado!",
+                            showConfirmButton: true,
+                            confirmButtonText: "cerrar",
+                            closeOnConfirm: false
+
+                        }).then ((result)=>{
+
+                            if(result.value){
+
+                                window.location = "usuarios";
+        
+                             }
+
+                           
+
+                        })
+                    
+                    </script>';
+                    }
+
+
+                } else {
                     echo '<script>
                     
                         swal.fire({
-                            type: "success",
-                            title: "¡Usuario creado!",
+                            icon: "error",
+                            title: "¡El usuario no puede ir vacio o llevar caracteres especiales!",
                             showConfirmButton: true,
                             confirmButtonText: "cerrar",
                             closeOnConfirm: false
@@ -159,34 +195,22 @@ class ControladorUsuarios{
                     </script>';
                 }
 
-            } else {
-
-                echo '<script>
-            
-                swal.fire({
-
-                    icon: "error",
-                    title: "¡El usuario no puede ir vacío o llevar caracteres especiales!",
-                    showConfirmButton: true,
-                    confirmButtonText: "Cerrar",
-                    closeOnConfirm: false
-
-                }).then((result)=>{
-                
-                    if(result.value){
-
-                        window.location = "usuarios";
-
-                    }
-
-                });
-            
-            
-                </script>';
-            }
         }
 
     }
+
+    /****************************
+     * MOSTRAR USUARIO
+     ***************************/
+
+     static public function ctrMostrarUsuarios($item, $valor){
+
+        $tabla = "usuarios";
+        $respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
+
+        return $respuesta;
+     }
+
 }
 
 
