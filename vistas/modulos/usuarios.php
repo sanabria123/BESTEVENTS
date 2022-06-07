@@ -80,9 +80,20 @@
               }
 
               
-              echo '<td>'.$value["perfil"].'</td>
-              <td><button class="btn btn-success btn-xs">Activiado</button></td>
-              <td>'.$value["ultimo_login"].'</td>
+              echo '<td>'.$value["perfil"].'</td>';
+
+              if($value["estado"] != 0){
+
+                echo '<td><button class="btn btn-success btn-xs btnActivar" idUsuario="'.$value["id"].'" estadoUsuario="0">Activado</button></td>';
+              
+              }else{
+
+                echo '<td><button class="btn btn-danger btn-xs btnActivar" idUsuario="'.$value["id"].'" estadoUsuario="1">Desactivado</button></td>';
+
+              }
+              
+
+              echo '<td>'.$value["ultimo_login"].'</td>
               <td>
 
                 <div class="btn-group">
@@ -276,7 +287,7 @@
 
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
 
-                <input type="text" class="form-control input-lg" name="editarNombre" value="" required>
+                <input type="text" class="form-control input-lg" id="editarNombre" name="editarNombre" value="" required>
 
               </div>
 
@@ -290,7 +301,7 @@
 
                   <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
-                  <input type="text" class="form-control input-lg" name="editarUsuario" value="" required>
+                  <input type="text" class="form-control input-lg" id="editarUsuario"name="editarUsuario" value="" readonly>
 
                 </div>
 
@@ -304,7 +315,9 @@
 
                   <span class="input-group-addon"><i class="fa fa-lock"></i></span>
 
-                  <input type="password" class="form-control input-lg" name="editarPassword" placeholder="Escriba la nueva contraseña" required>
+                  <input type="password" class="form-control input-lg" name="editarPassword" placeholder="Escriba la nueva contraseña">
+
+                  <input type="hidden" id="passwordActual" name="passwordActual">
 
                 </div>
 
@@ -344,6 +357,8 @@
 
                 <img src="vistas/img/usuarios/default/anonymous.jpg" class="img-thumbnail previsualizar" width="100px">
 
+                <input type="hidden" name="fotoActual" id="fotoActual">
+
               </div>
 
             </div>
@@ -362,8 +377,8 @@
 
         <?php
 
-          //$crearUsuario = new ControladorUsuarios();
-          // $crearUsuario -> ctrCrearUsuario();
+          $editarUsuario = new ControladorUsuarios();
+          $editarUsuario -> ctrEditarUsuario();
 
         ?>
 
