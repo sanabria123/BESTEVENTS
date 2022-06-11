@@ -98,8 +98,11 @@
 
                 <div class="btn-group">
 
-                  <button class="btn btn-warning btnEditarUsuario" idUsuario="'.$value["id"].'"data-toggle="modal" data-target="#modalEditarUsuario"><i class="fa fa-pencil"></i></button>
-                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                  <button class="btn btn-warning btnEditarUsuario" idUsuario="'.$value["id"].'" data-toggle="modal" 
+                    data-target="#modalEditarUsuario"><i class="fa fa-pencil"></i></button>
+                  
+                  <button class="btn btn-danger btnEliminarUsuario" idUsuario="'.$value["id"].'" fotoUsuario="'.$value["foto"]
+                    .'" usuario="'.$value["usuario"].'"><i class="fa fa-times"></i></button>
                 
                 </div>
               
@@ -172,7 +175,8 @@
 
                   <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
-                  <input type="text" class="form-control input-lg" name="nuevoUsuario" placeholder="Ingresar usuario" required>
+                  <input type="text" class="form-control input-lg" name="nuevoUsuario" 
+                  placeholder="Ingresar usuario" id="nuevoUsuario" required>
 
                 </div>
 
@@ -389,3 +393,10 @@
   </div>
 
 </div>
+
+<?php
+
+  $borrarUsuario = new ControladorUsuarios();
+  $borrarUsuario -> ctrBorrarUsuario();
+
+?>
