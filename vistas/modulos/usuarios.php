@@ -305,7 +305,7 @@
 
                   <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
-                  <input type="text" class="form-control input-lg" id="editarUsuario"name="editarUsuario" value="" readonly>
+                  <input type="text" class="form-control input-lg" id="editarUsuario" name="editarUsuario" value="" readonly>
 
                 </div>
 
@@ -341,7 +341,7 @@
 
                     <option value="Cliente">Cliente</option>
                     
-                    <option value="Vendedor">Contador</option>
+                    <option value="Contador">Contador</option>
           
                   </select>
 

@@ -55,7 +55,7 @@ $(".nuevaFoto").change(function() {
  * EDITAR USUARIO
  ********************************/
 
-$(".btnEditarUsuario").click(function() {
+$(document).on("click", ".btnEditarUsuario", function() {
 
     var idUsuario = $(this).attr("idUsuario");
 
@@ -72,21 +72,19 @@ $(".btnEditarUsuario").click(function() {
         processData: false,
         dataType: "json",
         success: function(respuesta) {
-
             $("#editarNombre").val(respuesta["nombre"]);
             $("#editarUsuario").val(respuesta["usuario"]);
             $("#editarPerfil").html(respuesta["perfil"]);
             $("#editarPerfil").val(respuesta["perfil"]);
+            $("#passwordActual").val(respuesta["password"]);
             $("#fotoActual").val(respuesta["foto"]);
 
-            $("#passwordActual").val(respuesta["password"]);
 
-            if (respuesta["foto"] != "") {
-
-                $(".previsualizar").attr("src", respuesta["foto"]);
+            if (respuesta["perfil"] != "") {
+                $(".previsualizar").attr("src", respuesta["foto"])
             }
-
         }
+
     });
 
 })
@@ -94,7 +92,7 @@ $(".btnEditarUsuario").click(function() {
 /*********************************
  * ACTIVAR USUARIO
  ********************************/
-$(".btnActivar").click(function() {
+$(document).on("click", ".btnActivar", function() {
 
     var idUsuario = $(this).attr("idUsuario");
     var estadoUsuario = $(this).attr("estadoUsuario");
@@ -113,7 +111,22 @@ $(".btnActivar").click(function() {
         processData: false,
         success: function(respuesta) {
 
+            if (window.matchMedia("(max-width:767px)").matches) {
 
+                swal.fire({
+                    title: "El usuario ha sido actualizado",
+                    icon: "success",
+                    confirmButtonText: "¡Cerrar!"
+                }).then(function(result) {
+
+                    if (result.value) {
+
+                        window.location = "usuarios";
+                    }
+
+                });
+
+            }
         }
 
     })
@@ -176,7 +189,7 @@ $("#nuevoUsuario").change(function() {
 /*********************************
  * ELIMINAR USUARIO
  ********************************/
-$(".btnEliminarUsuario").click(function() {
+$(document).on("click", ".btnEliminarUsuario", function() {
 
     var idUsuario = $(this).attr("idUsuario");
     var fotoUsuario = $(this).attr("fotoUsuario");

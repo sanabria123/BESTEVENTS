@@ -209,8 +209,7 @@
                     <option value="">seleccionar Perfil</option>
                     <option value="Administrador">Administrador</option>
                     <option value="Cliente">Cliente</option>
-                    <option value="Vendedor">Vendedor</option>
-                    <option value="Asesor Virtual">Asesor virtual</option>
+                    <option value="Contador">Contador</option>
                   </select>
 
                 </div>
