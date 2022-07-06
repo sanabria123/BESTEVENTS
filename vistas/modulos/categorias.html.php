@@ -54,7 +54,7 @@
 
               <td>1</td>
 
-              <td>Fiesta de quince</td>
+              <td>reservas</td>
 
               <td>
 
@@ -73,7 +73,7 @@
 
               <td>1</td>
 
-              <td>Matrimonio</td>
+              <td>reservas</td>
               
               <td>
 
@@ -92,7 +92,7 @@
 
               <td>1</td>
 
-              <td>Graduación</td>
+              <td>reservas</td>
               
               <td>
 
@@ -119,7 +119,7 @@
  
  </div>
 
- <!-- MODAL AGREGAR CATEGORIA-->
+ <!-- MODAL AGREGAR USUARIO-->
 
 
  <div id="modalAgregarCategoria" class="modal fade" role="dialog">
@@ -173,13 +173,6 @@
           <button typed="submit" class="btn btn-primary">Guardar categoria</button>
 
         </div>
-
-        <?php
-
-          $crearCategoria = new ControladorCategorias();
-          $crearCategoria -> ctrCrearCategoria();
-
-        ?>
 
       </form>
 

@@ -64,7 +64,7 @@
                 <a href="#">
 
                     <i class="fa fa-list-ul"></i>
-                    <span>Ventas</span>
+                    <span>reservas</span>
                     <span class="pull-right-container">
 
                     <i class="fa fa-angle-left pull-right"></i>
@@ -77,10 +77,10 @@
 
                     <li>
 
-                        <a href="ventas">
+                        <a href="reservas">
 
                             <i class="fa fa-circle-o"></i>
-                            <span>Administrar ventas</span>
+                            <span>Administrar reservas</span>
 
                         </a>
 
@@ -91,7 +91,7 @@
                         <a href="crear-venta">
 
                             <i class="fa fa-circle-o"></i>
-                            <span>Crear ventas</span>
+                            <span>Crear reservas</span>
 
                         </a>
 
@@ -102,7 +102,7 @@
                         <a href="reportes">
 
                             <i class="fa fa-circle-o"></i>
-                            <span>Reporte de ventas</span>
+                            <span>Reporte de reservas</span>
 
                         </a>
 

@@ -4,7 +4,7 @@
 
       <h1>
 
-        Administrar ventas
+        Administrar reservas
         
       </h1>
 
@@ -12,7 +12,7 @@
 
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
 
-        <li class="active">Administrar ventas</li>
+        <li class="active">Administrar reservas</li>
 
       </ol>
 

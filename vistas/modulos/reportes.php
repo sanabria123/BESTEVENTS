@@ -4,7 +4,7 @@
 
       <h1>
 
-        Reportes de ventas
+        Reportes de reservas
         
       </h1>
 
@@ -12,7 +12,7 @@
 
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
 
-        <li class="active">Reportes de ventas</li>
+        <li class="active">Reportes de reservas</li>
 
       </ol>
 

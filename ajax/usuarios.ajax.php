@@ -29,7 +29,7 @@ class AjaxUsuarios{
     public $activarUsuario;
     public $activarId;
 
-    static public function ajaxActivarUsuario(){
+    public function ajaxActivarUsuario(){
 
       $tabla = "usuarios";
 
