@@ -34,11 +34,11 @@
 
        <div class="box-body">
 
-        <table class="table table-bordered table-striped dt-responsive tablaProductos" width="100%">
+        <table class="table table-bordered table-striped dt-responsive tablas">
 
           <thead>
 
-          <tr>
+            <tr>
 
               <th style="width:10px">#</th>
               <th>Imagen</th>
@@ -47,12 +47,82 @@
               <th>Categoria</th>
               <th>Stock</th>
               <th>Precio de compra</th>
+              <th>Precio de venta</th>
               <th>Agregado</th>
               <th>Acciones</th>
 
             </tr>
 
           </thead>
+
+          <tbody>
+
+            <tr>
+              <td>1</td>
+              <td><img src="vistas/img/productos/default/anonymous.png" class="img-thumbnail" width="40px"</td>
+              <td>0001</td>
+              <td><Lorem ipsum dolor sit amet></td>
+              <td>Lorem Ipsum</td>
+              <td>20</td>
+              <td>$ 5.00</td>
+              <td>$ 10.00</td>
+              <td>2017-12-11 12:05:32</td>
+              <td>
+
+                <div class="btn-group">
+
+                  <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                
+                </div>
+              
+              </td>
+
+              <tr>
+              <td>1</td>
+              <td><img src="vistas/img/productos/default/anonymous.png" class="img-thumbnail" width="40px"</td>
+              <td>0001</td>
+              <td><Lorem ipsum dolor sit amet></td>
+              <td>Lorem Ipsum</td>
+              <td>20</td>
+              <td>$ 5.00</td>
+              <td>$ 10.00</td>
+              <td>2017-12-11 12:05:32</td>
+              <td>
+
+                <div class="btn-group">
+
+                  <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                
+                </div>
+              
+              </td>
+
+              <tr>
+              <td>1</td>
+              <td><img src="vistas/img/productos/default/anonymous.png" class="img-thumbnail" width="40px"</td>
+              <td>0001</td>
+              <td><Lorem ipsum dolor sit amet></td>
+              <td>Lorem Ipsum</td>
+              <td>20</td>
+              <td>$ 5.00</td>
+              <td>$ 10.00</td>
+              <td>2017-12-11 12:05:32</td>
+              <td>
+
+                <div class="btn-group">
+
+                  <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                
+                </div>
+              
+              </td>
+
+           
+
+          </tbody>
 
         </table>
         
@@ -91,38 +161,6 @@
 
           <div class="box-body">
 
-          <!-- ENTRADA PARA SELECCIONAR CATEGORÍA-->
-
-          <div class="form-group">
-
-            <div class="input-group">
-
-              <span class="input-group-addon"><i class="fa fa-th"></i></span>
-
-              <select class="form-control input-lg" id="nuevaCategoria" name="nuevaCategoria"  required>
-
-                <option value="">seleccionar Categoría</option>
-
-                <?php
-
-                $item = null;
-                $valor = null;
-
-                $categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
-
-                foreach ($categorias as $key => $value) {
-                  
-                  echo '<option value="'.$value["id"].'">'.$value["categoria"].'</option>';
-                }
-
-                ?>
-
-              </select>
-
-            </div>
-
-          </div>
-
           <!-- ENTRADA PARA EL CÓDIGO-->
           
             <div class="form-group">
@@ -146,6 +184,30 @@
                   <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span>
 
                   <input type="text" class="form-control input-lg" name="nuevoDescripcion" placeholder="Ingresar descripción" required>
+
+                </div>
+
+              </div>
+
+              <!-- ENTRADA PARA SELECCIONAR CATEGORÍA-->
+
+              <div class="form-group">
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                  <select name="nuevaCategoria" class="form-control input-lg">
+
+                    <option value="">seleccionar Categoría</option>
+
+                    <option value="Bautizo">Bautizos</option>
+
+                    <option value="Fiesta de 15">Fiestas de 15</option>
+
+                    <option value="Graduación">Graduación</option>
+
+                  </select>
 
                 </div>
 

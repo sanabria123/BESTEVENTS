@@ -42,7 +42,7 @@
                 <a href="productos">
 
                     <i class="fa fa-product-hunt"></i>
-                    <span>Productos</span>
+                    <span>productos</span>
 
                 </a>
 
