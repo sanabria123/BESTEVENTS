@@ -88,7 +88,7 @@
 
                     <li>
 
-                        <a href="crear-venta">
+                        <a href="crear-reserva">
 
                             <i class="fa fa-circle-o"></i>
                             <span>Crear reservas</span>

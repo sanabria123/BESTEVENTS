@@ -2,7 +2,7 @@
  * CARGAR LA TABLA DINÁMICA DE PRODUCTOS
  ********************************/
 
-$.ajax({
+/*$.ajax({
 
     url: "ajax/datatable-productos.ajax.php",
     success: function(respuesta) {
@@ -11,7 +11,7 @@ $.ajax({
 
     }
 
-})
+})*/
 
 $('.tablaProductos').DataTable({
     "ajax": "ajax/datatable-productos.ajax.php",
@@ -68,10 +68,21 @@ $("#nuevaCategoria").change(function() {
         dataType: "json",
         success: function(respuesta) {
 
-            var nuevoCodigo = respuesta["codigo"];
-            console.log("nuevoCodigo", nuevoCodigo);
+            if (!respuesta) {
+
+                var nuevoCodigo = idCategoria + "01";
+                $("#nuevoCodigo").val(nuevoCodigo);
+
+            } else {
+
+                var nuevoCodigo = Number(respuesta["codigo"]) + 1;
+                $("#nuevoCodigo").val(nuevoCodigo);
+
+            }
 
         }
+
+
 
     })
 

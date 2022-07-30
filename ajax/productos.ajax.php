@@ -16,7 +16,7 @@ class AjaxProductos{
 
     public function ajaxCrearCodigoProducto(){
 
-      $item = $id_categoria;
+      $item = "id_categoria";
       $valor = $this->idCategoria;
 
       $respuesta = ControladorProductos::ctrMostrarProductos($item, $valor);

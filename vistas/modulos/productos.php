@@ -131,7 +131,7 @@
 
                 <span class="input-group-addon"><i class="fa fa-code"></i></span>
 
-                <input type="text" class="form-control input-lg" name="nuevoCodigo" placeholder="Ingresar código" required>
+                <input type="text" class="form-control input-lg" id="nuevoCodigo" name="nuevoCodigo" placeholder="Ingresar código" readonly required>
 
               </div>
 
@@ -181,55 +181,6 @@
 
                         </div>
 
-                        <!-- ENTRADA PARA PRECIO VENTA-->
-
-                        <div class="col-xs-6">
-
-                            <div class="input-group">
-
-                              <span class="input-group-addon"><i class="fa fa-arrow-down"></i></span>
-
-                              <input type="number" class="form-control input-lg" name="nuevoPrecioVenta" placeholder="Precio de venta" required>
-
-                            </div>
-
-                            <br>
-
-                            <!-- CHECKBOX PARA PORCENTAJE -->
-
-                            <div class="col-xs-6">
-
-                              <div class="form-group">
-                                
-                                <label>
-                                  
-                                  <input type="checkbox" class="minimal porcentaje" checked>
-                                  Utilizar porcentaje
-
-                                </label>
-
-                              </div>
-
-                            </div>
-
-                            <!-- ENTRADA PARA PORCENTAJE -->
-
-                            <div class="col-xs-6" style= "padding:0">
-
-                              <div class="input-group">
-
-                                <input type="number" class="form-control input-lg nuevoPorcentaje" min="0" value="40" required>
-
-                                <span class="input-group-addon"><i class="fa fa-percent"></i></span>
-
-                              </div>
-
-                            </div>
-
-                          </div>
-
-                        </div>
-
               <!-- ENTRADA PARA SUBIR F0TO-->
 
               <div class="form-group">
@@ -240,7 +191,7 @@
 
                 <p class="help-block">Peso máximo de la imagen 2MB</p>
 
-                <img src="vistas/img/productos/default/anonymous.jpg" class="img-thumbnail" width="100px">
+                <img src="vistas/img/productos/default/anonymous.png" class="img-thumbnail" width="100px">
 
               </div>
 
@@ -259,6 +210,13 @@
         </div>
 
       </form>
+
+        <?php
+
+          $crearProducto = new ControladorProductos();
+          $crearProducto -> ctrCrearProducto();
+
+        ?>
 
     </div>
 
