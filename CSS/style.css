@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300;400;500;600;700&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-shadow: box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.breadcrumb {
+    list-style: none;
+    background-color: rgb(242, 239, 248);
+    height: 77px;
+}
+
+.skin-blue .main-header .navbar {
+    background-color: #3c8dbc;
+}
+
+header.main-header {
+    width: 100%;
+    float: left;
+}
+
+.main-sidebar {
+    display: flex;
+    width: 100%;
+    background-color: rgb(242, 239, 248);
+}
+
+.content-wrapper {
+    width: 100%;
+}
+
+.navbar-nav>.user-menu .user-image {
+    float: left;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: -2px;
+}
+
+a.dropdown-toggle {
+    float: right;
+    margin: 1%;
+}
+
+img.img-responsive {
+    width: 40px;
+    height: 40px;
+}
+
+.direction {
+    margin-left: 80%;
+    gap: 5px;
+    display: flex;
+}
+
+.sidebar {
+    width: 47px;
+    background-color: #0e2129;
+    left: 2%;
+}
+
+h1 {
+    margin-left: 25px;
+    color: #333333;
+    font-weight: 2;
+    font-size: 26px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.box {
+    margin-left: 10px;
+}
+
+.calendariopte1 {
+    margin-left: 10px;
+}
+
+.calendariopte2 {
+    margin-left: 180px;
+}
+
+.calendariopte3 {
+    margin-left: 240px;
+}
+
+#content1 {
+    display: flex;
+    flex-direction: row;
+    padding: 54px;
+}
+
+#content2 {
+    margin: 0px 0px 0px 50px;
+}
+
+label {
+    font-size: 20px;
+}
+
+.boton {
+    background-color: #3c8dbc;
+    border: #367fa9;
+    padding: 5px 35px;
+    text-align: center text-decoration: none;
+    font-size: 16px;
+    margin: 15px;
+    cursor: pointer;
+    position: relative;
+    top: 40%;
+    left: 500px;
+}
+
+.main-footer {
+    background-color: white;
+    width: 1271px;
+    height: 12px;
+    padding: 25px;
+    margin-left: 45px;
+}
+
+.content {
+    background-color: white;
+    margin: 0px 15px 35px 15px;
+}
+
+.wrapper {
+    background-color: #0e2129;
+}

@@ -1,0 +1,256 @@
+<html>
+
+<head>
+    <!-- seo -->
+    <meta charset="utf-8">
+    <meta name="viewppoint" content="wisth=device-width, initial-scale=1">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Reservas</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+</head>
+
+<body class="skin-blue collapse-mini login-page">
+
+    <header class="main-header">
+
+        <!--BARRA DE NAVEGACION-->
+
+        <nav class="navbar navbar-static-top" role="navigation">
+
+            <!--BOTON DE NAVEGACION-->
+
+            <a href="#" class="sidebar-toogle" data-toogle="push-menu" role="button">
+
+                <span class="sr-only">Toggle navigation</span>
+
+            </a>
+
+
+            <!--PELFIL DE USUARIO-->
+
+            <div class="navbar-custom-menu">
+
+                <ul class="nav navbar-nav">
+
+                    <li class="dropdown user user-menu">
+
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                            <img src="vistas/img/usuarios/Andres/431.png" class="user-image">
+
+                            <span class="hidden-xs" style="color: black;">admin</span>
+
+                        </a>
+
+                        <!--LOGOTIPO-->
+
+                        <a href class="logo">
+
+                            <!--logo-mini-->
+                            <span class="logo-mini">
+
+                                <img src="vistas/img/plantilla/icono.color.png" class="img-responsive" style="padding: 3px;">
+
+                                <i class="fa-solid fa-bars" style="color: black;"></i>
+                            
+                            </span>
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <div class="wrapper">
+
+        <aside class="main-sidebar">
+
+            <section class="sidebar">
+
+                <ul class="sidebar-menu tree">
+
+                    <li class="active" style="list-style: none;">
+
+                        <a href="inicio">
+
+                            <i class="fa-solid fa-house-chimney" style="color: white; margin: 10px;"></i>
+
+                        </a>
+
+                    </li>
+
+                    <li class="active" style="list-style: none;"><br>
+
+                        <a href="usuarios">
+
+                            <i class="fa-solid fa-user" style="color: white; margin: 10px;"></i>
+
+                        </a>
+
+                    </li>
+
+                    <li class="active" style="list-style: none;"><br>
+
+                        <a href="categorias">
+
+                            <i class="fa fa-th" style="color: white; margin: 10px;"></i>
+
+                        </a>
+
+                    </li>
+
+                    <li class="active" style="list-style: none;"><br>
+
+                        <a href="productos">
+
+                            <i class="fa-brands fa-product-hunt" style="color: white; margin: 10px;"></i>
+
+                        </a>
+
+                    </li>
+
+                    <li class="active" style="list-style: none;"><br>
+
+                        <a href="clientes">
+
+                            <i class="fa fa-users" style="color: white; margin: 10px;"></i>
+
+                        </a>
+
+                    </li>
+
+
+                    <a href="#"><br>
+
+                        <i class="fa fa-list-ul" style="color: white; margin: 10px;"></i>
+                        <span class="pull-right-container">
+        
+                            <!--<i class="fa fa-angle-right pull-left"></i>-->
+        
+                            </span>
+
+                    </a>
+
+                </ul>
+
+            </section>
+
+            <div class="content-wrapper">
+
+                <section class="content-header">
+
+                    <ol class="breadcrumb">
+
+                        <h1><br> Solicitar reserva
+
+                        </h1>
+
+                        <div class="direction">
+                            <li>
+                                <a href="inicio" style="list-style: none; color: black;">
+                                    <i class="fa fa-dashboard" style="color: black;"></i> Inicio
+                                </a>
+
+                            </li>
+
+                            <i class="fa-solid fa-arrow-right-long"></i>
+
+                            <li class="active">
+                                Solicitar reserva
+                            </li>
+                        </div>
+                    </ol>
+
+                </section>
+
+                <!--MAIN CONTENT-->
+
+                <section class="content">
+
+                    <!--DEFAULT BOX-->
+
+                    <div class="box">
+
+                        <div class="box-header with-border">
+
+                            <!--<h3 class="box-title">Title</h3>-->
+
+                            <div class="box-tools pull-right">
+
+                            </div>
+
+                        </div>
+
+                        <div class="box-body">
+
+                            <div class="cabecera">
+
+                                <div id="content1">
+
+                                    <form class="calendariopte1">
+                                        <label for="Tipodeevento">Tipo de evento</label>
+                                        <select name="Tipodeevento" id="Tipodeevento" <option value="Boda">Boda</option>
+                                                <option value="Fiestadegrado">Fiesta de grado</option>
+                                                <option value="Fiestadequince">Fiesta de quince</option>
+                                                <option value="Aniversario">Aniversario</option>
+                                                <option value="Confirmación">Confirmación</option>
+                                                <option value="Bautizo">Bautizo</option>
+                                                <option value="Cumpleaños">Cumpleaños</option>
+                                                <option value="Despedidadesoltero">Despedida de solteros</option>
+                                            </select>
+                                    </form>
+
+                                    <form class="calendariopte2">
+                                        <label for="Fecha">fecha</label>
+                                        <input class="entrada1" type="date" id="Fecha" name="Fecha">
+                                    </form>
+
+                                    <form class="calendariopte3">
+                                        <label for="Hora">hora</label>
+                                        <input class="entrada1" type="time" id="hora" name="hora"><br><br><br><br><br><br>
+                                    </form>
+
+                                </div>
+
+                                <div id=content2>
+
+                                    <form action="calendariopte4">
+                                        <label for="Nombre">Nombre</label>
+                                        <input class="entrada2" type="text" id="nomNombre" name="nomNombre"><br><br><br>
+
+                                        <label for="Teléfono">Teléfono</label>
+                                        <input class="entrada3" type="text" id="Teléfono" name="Teléfono"><br><br><br>
+
+                                        <input type="submit" value="Solicitar" class="boton">
+
+                                    </form>
+
+                                </div>
+
+                            </div>
+                </section>
+
+                </div>
+
+        </aside>
+        <footer class="main-footer">
+
+            <strong>
+                Copyright  2022
+                <a href target="-blank" style="color: #337ab7;">Ana María Sanabria</a>
+                . 
+            </strong> Todos los derechos reservados.
+        </footer>
+
+</body>
+
+</html>
