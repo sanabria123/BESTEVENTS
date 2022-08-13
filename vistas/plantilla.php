@@ -104,6 +104,7 @@ session_start()
          $_GET["ruta"] == "productos" ||
          $_GET["ruta"] == "clientes" ||
          $_GET["ruta"] == "reservas" ||
+         $_GET["ruta"] == "solicitar-reserva" ||
          $_GET["ruta"] == "crear-reserva" ||
          $_GET["ruta"] == "reportes" ||
          $_GET["ruta"] == "salir"){

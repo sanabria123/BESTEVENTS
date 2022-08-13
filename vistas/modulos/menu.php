@@ -77,6 +77,17 @@
 
                     <li>
 
+                        <a href="solicitar-reserva">
+
+                            <i class="fa fa-circle-o"></i>
+                            <span>Solicitar reserva</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
                         <a href="reservas">
 
                             <i class="fa fa-circle-o"></i>
@@ -107,8 +118,6 @@
                         </a>
 
                     </li>
-
-
         
             
         </ul>
