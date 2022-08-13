@@ -63,7 +63,10 @@
                   <input class="entrada3" type="text" id="Teléfono" name="Teléfono" style="width:200px;"><br><br><br>
 
                   <input type="submit" value="Solicitar" class="boton" style="background-color: #3c8dbc; border: #367fa9; padding: 5px 35px; text-align: center text-decoration: none; font-size: 16px;
-                    margin: 0px; cursor: pointer; position: relative;  left: 500px;">
+                    margin: 0px; cursor: pointer; position: relative;  left: 620px;">
+
+                  <input type="submit" value="Cancelar" class="boton" style="background-color: #3c8dbc; border: #367fa9; padding: 5px 35px; text-align: center text-decoration: none; font-size: 16px;
+                    margin: 0px; cursor: pointer; position: relative;  left: 700px;">
 
               </form>
 
